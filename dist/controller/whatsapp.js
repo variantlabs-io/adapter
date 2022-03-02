@@ -6,19 +6,22 @@ class WhatsappController {
     constructor() {
         this.sendTextMessage = (request, response, next) => {
             let req = request.body;
+            const body = req.message;
+            const callback = (err, resp) => {
+                if (err) {
+                    console.log(err);
+                    response.status(500).json("Internal server error");
+                }
+                else {
+                    response.status(200).json(resp);
+                }
+            };
             switch (req.messageType) {
                 case "textMessage":
-                    const body = req.message;
-                    const callback = (err, resp) => {
-                        if (err) {
-                            console.log(err);
-                            response.status(500).json("Internal server error");
-                        }
-                        else {
-                            response.status(200).json(resp);
-                        }
-                    };
                     whatsapp_1.WhatsappService.sendTextMessage(body, callback);
+                    break;
+                case "locationMessage":
+                    whatsapp_1.WhatsappService.sendLocation(body, callback);
                     break;
                 default:
                     response.status(500).json("Wrong message type");

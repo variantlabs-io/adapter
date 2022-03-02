@@ -1,3 +1,4 @@
+import { Locations, Template } from "./whatsapp";
 export interface CommandRequest {
     messageApp: string
     messageType: string
@@ -6,5 +7,7 @@ export interface CommandRequest {
 
 export interface WhatsappRequest {
     toNumber: string
-    textBody: string
+    textBody?: string
+    location?: Locations
+    template?: Template
 }
