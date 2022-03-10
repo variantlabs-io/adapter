@@ -23,6 +23,27 @@ export class WhatsappController {
             case "locationMessage":
                 WhatsappService.sendLocation(body, callback)
                 break;
+            case "templateMessage":
+                WhatsappService.sendTemplate(body, callback)
+                break;
+            case "contactMessage":
+                WhatsappService.sendContact(body, callback)
+                break;
+            case "templateMediaMessage":
+                WhatsappService.sendMediaTemplate(body, callback)
+                break;
+            case "imageMessage":
+                WhatsappService.sendImage(body, callback)
+                break;
+            case "audioMessage":
+                WhatsappService.sendAudio(body, callback)
+                break;
+            case "videoMessage":
+                WhatsappService.sendVideo(body, callback)
+                break;
+            case "fileMessage":
+                WhatsappService.sendFile(body, callback)
+                break;
             default:
                 response.status(500).json("Wrong message type")
         }
