@@ -60,62 +60,7 @@ exports.WhatsappService = {
                 type: 'custom',
                 custom: {
                     type: 'template',
-                    template: {
-                        namespace: "9b6b4fcb_da19_4a26_8fe8_78074a91b584",
-                        name: "verify",
-                        language: {
-                            policy: 'deterministic',
-                            code: 'en_US',
-                        },
-                        components: [
-                            {
-                                type: 'header',
-                                parameters: [
-                                    {
-                                        type: 'location',
-                                        location: {
-                                            longitude: -122.425332,
-                                            latitude: 37.758056,
-                                            name: 'Facebook HQ',
-                                            address: '1 Hacker Way, Menlo Park, CA 94025',
-                                        },
-                                    },
-                                ],
-                            },
-                            {
-                                type: 'body',
-                                parameters: [
-                                    {
-                                        type: 'text',
-                                        text: 'Value 1',
-                                    },
-                                    {
-                                        type: 'text',
-                                        text: 'Value 2',
-                                    },
-                                    {
-                                        type: 'text',
-                                        text: 'Value 3',
-                                    },
-                                    {
-                                        type: 'text',
-                                        text: 'Value 3',
-                                    },
-                                ],
-                            },
-                            {
-                                type: 'button',
-                                index: 0,
-                                sub_type: 'url',
-                                parameters: [
-                                    {
-                                        type: 'text',
-                                        text: '1Z999AA10123456784',
-                                    },
-                                ],
-                            },
-                        ],
-                    },
+                    template: body.templateMedia
                 }
             }
         }, callback);
