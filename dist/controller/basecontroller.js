@@ -5,7 +5,6 @@ const whatsapp_1 = require("./whatsapp");
 class BaseController {
     constructor() {
         this.init = (request, response, next) => {
-            console.log(request.body);
             let req = request.body;
             switch (req.messageApp) {
                 case "whatsapp":
@@ -20,6 +19,9 @@ class BaseController {
                     response.status(500).json("Wrong app name");
                     break;
             }
+        };
+        this.inbound = (request, response, next) => {
+            response.status(200).json("Testing");
         };
     }
 }

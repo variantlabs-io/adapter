@@ -9,8 +9,23 @@ export interface WhRequest {
     audio?: Audio
     video?: ImageSend
     file?: ImageSend
+    reply?: Reply
 }
 
+export interface Reply {
+    header: string
+    body: string
+    footer: string
+    replyData: string[][]
+}
+
+export interface ReplyData {
+    type: string,
+    reply: {
+        id: string,
+        title: string,
+    },
+}
 export interface Audio {
     url: string
 }

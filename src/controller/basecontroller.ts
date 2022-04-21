@@ -4,7 +4,6 @@ import { WhatsappController } from "./whatsapp";
 
 export class BaseController {
     init: RequestHandler = (request, response, next) => {
-        console.log(request.body)
         let req : CommandRequest = request.body
         switch (req.messageApp) {
             case "whatsapp":
@@ -19,5 +18,9 @@ export class BaseController {
                 response.status(500).json("Wrong app name");
                 break;
         }
+    }
+
+    inbound: RequestHandler = (request, response, next) => {
+        response.status(200).json("Testing");
     }
 }

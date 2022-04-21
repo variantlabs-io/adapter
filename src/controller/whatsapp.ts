@@ -26,6 +26,12 @@ export class WhatsappController {
             case "templateMessage":
                 WhatsappService.sendTemplate(body, callback)
                 break;
+            case "replyMessage":
+                WhatsappService.sendReplyMessage(body, callback)
+                break;
+            case "interactiveMessage":
+                WhatsappService.sendInteractiveMessage(body, callback)
+                break;
             case "contactMessage":
                 WhatsappService.sendContact(body, callback)
                 break;
